@@ -3,9 +3,9 @@
     "path": "~/Desktop/R/Exercicios/Exercicios.qmd",
     "project_path": "Exercicios.qmd",
     "type": "quarto_markdown",
-    "hash": "0",
+    "hash": "2433642375",
     "contents": "",
-    "dirty": true,
+    "dirty": false,
     "created": 1694861150996.0,
     "source_on_save": false,
     "relative_order": 1,
@@ -22,11 +22,11 @@
         "rmdVisualModeLocation": "1044:0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1694863677,
+    "lastKnownWriteTime": 1694879730,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1694864024990,
+    "last_content_update": 1694879730356,
     "read_only": false,
     "read_only_alternatives": []
 }

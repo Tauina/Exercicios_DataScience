@@ -36,6 +36,7 @@ library(gt)
 library(MLDataR)
 library(gtsummary)
 library(report)
+library(flextable)
 ```
 
 {{< pagebreak >}}
@@ -205,7 +206,7 @@ model1_table <- model1_tidy %>%
     conf.high = round(conf.high, 4)
   )
 
-model1_table
+flex_table()
 ```
 
 {{< pagebreak >}}
