@@ -1,0 +1,64 @@
+---
+title: "Exercicio_Dashboard | `r format(Sys.time(),'%d %b %y-%H:%m')`"
+author: "Catarina Gouveia"
+date: "`r Sys.Date()`"
+knit: (function(input_file, encoding) {
+  out_dir <- 'docs';
+  rmarkdown::render(input_file,
+ encoding=encoding,
+ output_file=file.path(dirname(input_file), out_dir, 'index.html'))})
+output: 
+  flexdashboard::flex_dashboard:
+    theme: lumen
+    orientation: rows
+    social: [ "twitter", "facebook", "menu" ]
+    navbar:
+      - { title: "Sobre", href:"https://www.ensp.unl.pt/cursos/"}
+
+---
+
+```{=html}
+<style>                     
+.navbar {
+  background-color:"#fdbe85";
+  border-color:grey;
+}
+.navbar-brand {
+color:black!important;
+}
+</style>
+```
+
+```{r}
+# install.packages("flexdashboard")
+# install.packages("leaflet")
+
+library(leaflet)
+library(flexdashboard)
+library(tidyverse)
+library(janitor)
+library(readxl)
+```
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  echo = FALSE,
+  eval = TRUE
+  )
+
+#Limpar o environment
+rm(list=ls())
+options(scipen=4)
+```
+
+```{r}
+Obter datasets
+
+
+```
+
+

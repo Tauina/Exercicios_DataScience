@@ -1,0 +1,131 @@
+---
+title: "ChatGPT"
+format: html
+editor: visual
+---
+```{r}
+# Load the necessary libraries
+library(ggplot2)
+library(dplyr)
+
+# Load the mtcars dataset
+data("mtcars")
+
+# Calculate the normalized values for each attribute
+mtcars_normalized <- mtcars %>%
+  select(mpg:carb) %>%  # Select the columns of interest
+  scale()              # Normalize the data
+
+# Create a new dataframe with the car names
+car_names <- data.frame(Car = row.names(mtcars))
+
+# Combine the car names and normalized data
+mtcars_normalized <- cbind(car_names, mtcars_normalized)
+
+# Melt the data for easier plotting
+library(reshape2)
+mtcars_melted <- melt(mtcars_normalized, id.vars = "Car")
+
+# Create the spider plot
+ggplot(mtcars_melted, aes(x = variable, y = value, group = Car, color = Car)) +
+  geom_polygon() +
+  geom_path() +
+  coord_polar() +  # Convert to a polar coordinate system
+  labs(title = "Spider Plot of Car Performance Attributes",
+       subtitle = "Normalized values for various car models",
+       x = NULL, y = NULL) +
+  theme_minimal()
+
+```
+
+
+```{r}
+# Load the necessary libraries
+library(cluster)
+library(ggplot2)
+
+# Load the Iris dataset
+data(iris)
+
+# Select the columns that will be used for clustering
+iris_data <- iris[, c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width")]
+
+# Determine the optimal number of clusters using the elbow method
+wss <- numeric(10)
+for (i in 1:10) {
+  kmeans_result <- kmeans(iris_data, centers = i)
+  wss[i] <- kmeans_result$tot.withinss
+}
+
+# Plot the within-cluster sum of squares (WSS) to help choose the number of clusters
+plot(1:10, wss, type = "b", xlab = "Number of Clusters", ylab = "Within-cluster Sum of Squares (WSS)", main = "Elbow Method")
+
+# Based on the elbow method, choose an appropriate number of clusters (e.g., 3 in this case)
+num_clusters <- 3
+
+# Perform k-means clustering with the chosen number of clusters
+kmeans_result <- kmeans(iris_data, centers = num_clusters)
+
+# Add cluster assignments to the original dataset
+iris_clustered <- cbind(iris, Cluster = kmeans_result$cluster)
+
+# Create a cluster plot using the first two attributes
+ggplot(iris_clustered, aes(x = Sepal.Length, y = Sepal.Width, color = factor(Cluster))) +
+  geom_point() +
+  labs(title = "Cluster Plot of Iris Dataset", x = "Sepal Length", y = "Sepal Width") +
+  theme_minimal()
+
+```
+```{r}
+# Load necessary libraries
+library(ggplot2)
+library(sf)
+library(dplyr)
+
+
+
+# Install and load the required libraries if you haven't already
+install.packages("ggplot2")
+install.packages("maps")
+library(ggplot2)
+library(maps)
+
+# Get a map of Portugal from the maps package
+portugal_map <- map("world", regions = "Portugal", fill = TRUE, plot = FALSE)
+
+# Create a data frame from the map data
+portugal_df <- fortify(portugal_map)
+
+# Create the map using ggplot2
+ggplot(portugal_df, aes(x = long, y = lat, group = group)) +
+  geom_polygon(fill = "lightblue", color = "black") +
+  labs(title = "Basic Map of Portugal") +
+  theme_minimal()
+
+# Create the map using ggplot2
+ggplot() +
+  geom_sf(data = portugal_districts, fill = "white", color = "black") +
+  labs(title = "Portugal Districts Map") +
+  theme_minimal()
+
+
+# Assuming you have a dataset that contains information about the districts and their colors
+# You can create a sample data frame for demonstration purposes
+district_data <- data.frame(
+  district = portugal_districts$District,  # Make sure the district names match the shapefile
+  color = sample(c("red", "blue", "green", "yellow", "purple"), nrow(portugal_districts), replace = TRUE)
+)
+
+# Merge the district data with the shapefile
+portugal_districts <- left_join(portugal_districts, district_data, by = "district")
+
+# Create the map using ggplot2
+ggplot() +
+  geom_sf(data = portugal_districts, aes(fill = color)) +
+  scale_fill_identity() +
+  labs(title = "Portugal Districts Map", fill = "District") +
+  theme_minimal() +
+  theme(legend.position = "right")
+
+```
+

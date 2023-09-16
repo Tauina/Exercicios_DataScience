@@ -1,0 +1,8 @@
+"0",""
+"0","# Create the map using ggplot2"
+"0","ggplot() +"
+"0","  geom_sf(data = portugal_districts, fill = ""white"", color = ""black"") +"
+"0","  labs(title = ""Portugal Districts Map"") +"
+"0","  theme_minimal()"
+"2","Error: object 'portugal_districts' not found
+"

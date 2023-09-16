@@ -1,0 +1,46 @@
+"0","# Load the necessary libraries"
+"0","library(ggplot2)"
+"0","library(dplyr)"
+"0",""
+"0","# Load the mtcars dataset"
+"0","data(""mtcars"")"
+"0",""
+"0","# Calculate the normalized values for each attribute"
+"0","mtcars_normalized <- mtcars %>%"
+"0","  select(mpg:carb) %>%  # Select the columns of interest"
+"0","  scale()              # Normalize the data"
+"0",""
+"0","# Create a new dataframe with the car names"
+"0","car_names <- data.frame(Car = row.names(mtcars))"
+"0",""
+"0","# Combine the car names and normalized data"
+"0","mtcars_normalized <- cbind(car_names, mtcars_normalized)"
+"0",""
+"0","# Melt the data for easier plotting"
+"0","library(reshape2)"
+"2","
+Attaching package: ‘reshape2’
+
+"
+"2","The following objects are masked from ‘package:data.table’:
+
+    dcast, melt
+
+"
+"2","The following object is masked from ‘package:tidyr’:
+
+    smiths
+
+"
+"0","mtcars_melted <- melt(mtcars_normalized, id.vars = ""Car"")"
+"0",""
+"0","# Create the spider plot"
+"0","ggplot(mtcars_melted, aes(x = variable, y = value, group = Car, color = Car)) +"
+"0","  geom_polygon() +"
+"0","  geom_path() +"
+"0","  coord_polar() +  # Convert to a polar coordinate system"
+"0","  labs(title = ""Spider Plot of Car Performance Attributes"","
+"0","       subtitle = ""Normalized values for various car models"","
+"0","       x = NULL, y = NULL) +"
+"0","  theme_minimal()"
+"0",""

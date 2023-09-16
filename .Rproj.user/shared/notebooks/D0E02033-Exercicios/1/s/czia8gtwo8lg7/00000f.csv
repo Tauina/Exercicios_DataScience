@@ -1,0 +1,4 @@
+"0","hipoxia_stat <- hipoxia_limp %>%"
+"0","  group_by(female) %>%"
+"0","  summarise(media = round(mean(bmi), digits = 1),"
+"0","            dp = round(sd(bmi), digits = 2))"

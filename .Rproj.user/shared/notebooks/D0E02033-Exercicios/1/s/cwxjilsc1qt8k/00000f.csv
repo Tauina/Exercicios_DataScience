@@ -1,0 +1,7 @@
+"0","hipoxia_limp <- clean_names(hipoxia_ori)"
+"0",""
+"0","hipoxia <- hipoxia_limp %>%"
+"0","  select("
+"0","    iv_morphine_eq, age, female, race, bmi, smoking, diabetes, propofol_induction, crystalloids, colloids  "
+"0","    ) %>%"
+"0","  filter(age >25)"

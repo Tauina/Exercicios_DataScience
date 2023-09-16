@@ -1,0 +1,4 @@
+"0",""
+"0","municipios_limp <- municipios_ori %>%"
+"0","  clean_names() %>%"
+"0","  rename(municipality = municipio)"

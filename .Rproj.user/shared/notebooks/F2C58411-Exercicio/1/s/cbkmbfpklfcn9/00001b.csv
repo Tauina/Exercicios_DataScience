@@ -1,0 +1,7 @@
+"0","x2 <- hipoxia_clean %>%"
+"0","  filter(age>=60) %>%"
+"0","  summarise(total = n())"
+"0",""
+"0","valueBox(x2, "
+"0","         icon = ""fa-person-cane"","
+"0","         color=""#fc8d59"")"

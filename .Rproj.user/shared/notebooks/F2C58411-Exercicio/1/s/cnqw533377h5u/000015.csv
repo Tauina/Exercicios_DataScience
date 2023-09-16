@@ -1,0 +1,7 @@
+"0","x1 <- hipoxia_clean %>%"
+"0","  filter(bmi>=30) %>%"
+"0","  summarise(total = n())"
+"0",""
+"0","valueBox(x1, "
+"0","         icon = ""fa-burger"","
+"0","         color=""#fdd49e"")"

@@ -1,0 +1,218 @@
+---
+title: "Exercicios"
+author: "Catarina R Gouveia"
+date: today
+date-format: long
+lang: pt 
+format: 
+  docx: 
+    reference-doc: templates/template1.docx
+execute: 
+  echo: false
+  warning: false
+project:
+  output-dir: outputs/docs
+bibliography: references.bib
+csl: templates/vancouver.csl
+---
+
+```{r}
+rm(list = ls(all.names = TRUE))
+```
+
+```{r}
+library(tidyverse)
+library(janitor)
+library(readxl)
+library(lubridate)
+library(data.table)
+library(here)
+library(haven)
+library(ggplot2)
+library(ggthemes)
+library(scales)
+library(broom)
+library(gt)
+library(MLDataR)
+library(gtsummary)
+library(report)
+```
+
+{{< pagebreak >}}
+
+## Introdução
+
+Este documento apresenta a resolução dos exercícios efetuados ao longo do curso *Data Science with R in Healthcare* 4ª edição, a `r format(Sys.time(), '%d %B %Y')`.
+
+## Exercício 1
+
+### Exercício 1.3
+
+Criar um script quarto com saída HTML, com pelo menos uma imagem.
+
+![Logotipo](images/logo.png){fig-alt="Logotipo Catarina Gouveia" width="200"}
+
+### Exercício 1.4
+
+Criar um novo script com saída em formato .docx, e inclua referências bibliográficas.
+
+{{< pagebreak >}}
+
+## Exercício 2
+
+```{r}
+hipoxia_ori <- read_excel("data/hypoxia.xlsx")
+View(hipoxia_ori)
+```
+
+```{r}
+hipoxia_limp <- clean_names(hipoxia_ori)
+
+hipoxia <- hipoxia_limp %>%
+  select(
+    iv_morphine_eq, age, female, race, bmi, smoking, diabetes, propofol_induction, crystalloids, colloids  
+    ) %>%
+  filter(age >25)
+```
+
+```{r}
+hipoxia <- hipoxia %>%
+  mutate(
+    soma = crystalloids + colloids
+  )
+```
+
+```{r}
+hipoxia_stat <- hipoxia_limp %>%
+  group_by(female) %>%
+  summarise(media = round(mean(bmi), digits = 1),
+            dp = round(sd(bmi), digits = 2))
+```
+
+Nos homens, a média do IMC é de `r hipoxia_stat[1,2]` ± `r hipoxia_stat[1,3]` anos e nas mulheres é de `r hipoxia_stat[2,2]` ± `r hipoxia_stat[2,3]` anos.
+
+{{< pagebreak >}}
+
+## Exercício 3
+
+```{r}
+
+municipios_ori <- read_excel("data/municipios.xlsx")
+View(municipios_ori)
+
+```
+
+```{r}
+
+municipios_limp <- municipios_ori %>%
+  clean_names() %>%
+  rename(municipality = municipio)
+```
+
+```{r}
+aggre <- left_join(
+  hipoxia_limp,
+  municipios_limp,
+  by = "municipality"
+)
+
+```
+
+O quadro seguinte mostra o número de casos estudados agregados por NUTS2.
+
+```{r}
+municip_stat <- aggre %>%
+  group_by(nuts_2) %>%
+  summarise(count = n()) %>%
+  arrange(desc(count))
+
+quadro_1 <- gt(municip_stat) %>%
+  opt_align_table_header("left")
+
+quadro_1
+```
+
+{{< pagebreak >}}
+
+## Exercício 4
+
+Crie um gráfico que relacione as variáveis bmi e min_sao2
+
+```{r}
+
+p1 <- ggplot(data = hipoxia_limp, aes(x=min_sao2, y = bmi)) +
+    geom_point()
+
+p1
+
+```
+
+Crie um gráfico que mostre a mediana e os intervalos interquartis das variáveis bmi e diabetes [@cowin2005cadherins].
+
+```{r}
+hipoxia_plot <- hipoxia_limp %>%
+  mutate(
+    diabetes = factor(diabetes, labels = c("sem diabetes", "com diabetes"))
+  )
+
+
+p2 <- ggplot(data = hipoxia_plot, aes(x=diabetes, y = bmi)) +
+    geom_boxplot()
+
+p2
+```
+
+{{< pagebreak >}}
+
+## Exercício 5
+
+Construa um modelo estatístico para determinar os fatores de risco associados à utilização de CPAP, considerando as variáveis age, female, race, bmi e sleeptime [@litaker2005context].
+
+<!--# Exponenciar betas permite obter OR -->
+
+```{r}
+
+model1 <- glm(
+  cpap ~ age + + bmi + sleeptime + as.factor(female) + as.factor(race),
+  family = "binomial",
+  data = hipoxia_limp
+)
+
+model1_tidy <- tidy(model1, exponentiate = TRUE, conf.int = TRUE)
+
+
+model1_table <- model1_tidy %>%
+  select(term, estimate, p.value, conf.low, conf.high) %>%
+    mutate(
+    term = case_when(
+      term =="(Intercept)" ~ "Intercept",
+      term =="age" ~ "Age",
+      term =="as.factor(female)1" ~ "Female",
+      term == "bmi" ~ "BMI",
+      term == "sleeptime" ~ "Sleep time",
+      term == "as.factor(race)2" ~ "Race 2",
+      term == "as.factor(race)3" ~ "Race 3"
+      ,
+    )
+  ) %>% rename(
+    variable=term,
+    Odds_Ratio=estimate
+  ) %>%
+  mutate(
+    Odds_Ratio = round(Odds_Ratio, 5),
+    p.value = round(p.value, 5),
+    conf.low = round(conf.low, 4),
+    conf.high = round(conf.high, 4)
+  )
+
+model1_table
+```
+
+{{< pagebreak >}}
+
+## Referências
+
+Ao longo do documento foram colocadas referências bibliográficas que não apresentam qualquer valor científico [@santos2022omicron].
+
+::: {#refs}
+:::

@@ -1,0 +1,8 @@
+"0",""
+"0","x3 <- hipoxia_clean %>%"
+"0","  filter(diabetes == 1 & smoking == 1) %>%"
+"0","  summarise(total = n())"
+"0",""
+"0","valueBox(x3, "
+"0","         icon = ""fa-smoking"","
+"0","         color=""#bdbdbd"")"

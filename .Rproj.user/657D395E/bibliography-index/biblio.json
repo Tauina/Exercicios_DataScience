@@ -1,0 +1,426 @@
+{
+    "sources": [
+        {
+            "author": [
+                {
+                    "family": "SANTOS",
+                    "given": "ANDRE PERALTA"
+                },
+                {
+                    "family": "Leite",
+                    "given": "Pedro Pinto"
+                },
+                {
+                    "family": "Casaca",
+                    "given": "Pedro"
+                },
+                {
+                    "family": "Fernandes",
+                    "given": "Eugenia"
+                },
+                {
+                    "family": "Rodrigues",
+                    "given": "Eduardo Freire"
+                },
+                {
+                    "family": "Moreno",
+                    "given": "Joana"
+                },
+                {
+                    "family": "Ricoca",
+                    "given": "Vasco"
+                },
+                {
+                    "family": "Gomes",
+                    "given": "Joao Paulo"
+                },
+                {
+                    "family": "Ferreira",
+                    "given": "Rita"
+                },
+                {
+                    "family": "Isidro",
+                    "given": "Joana"
+                },
+                {
+                    "literal": "others"
+                }
+            ],
+            "container-title": "medRxiv",
+            "id": "santos2022omicron",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "publisher": "Cold Spring Harbor Laboratory Press",
+            "title": "Omicron (BA. 1) SARS-CoV-2 variant is associated with reduced risk of hospitalization and length of stay compared with delta (b. 1.617. 2)",
+            "type": "article-journal"
+        },
+        {
+            "author": [
+                {
+                    "family": "Litaker",
+                    "given": "David"
+                },
+                {
+                    "family": "Koroukian",
+                    "given": "Siran M"
+                },
+                {
+                    "family": "Love",
+                    "given": "Thomas E"
+                }
+            ],
+            "container-title": "Medical care",
+            "id": "litaker2005context",
+            "issued": {
+                "date-parts": [
+                    [
+                        2005
+                    ]
+                ]
+            },
+            "page": "531-540",
+            "publisher": "JSTOR",
+            "title": "Context and healthcare access: Looking beyond the individual",
+            "title-short": "Context and healthcare access",
+            "type": "article-journal"
+        },
+        {
+            "author": [
+                {
+                    "family": "Cowin",
+                    "given": "Pamela"
+                },
+                {
+                    "family": "Rowlands",
+                    "given": "Tracey M"
+                },
+                {
+                    "family": "Hatsell",
+                    "given": "Sarah J"
+                }
+            ],
+            "container-title": "Current opinion in cell biology",
+            "id": "cowin2005cadherins",
+            "issue": "5",
+            "issued": {
+                "date-parts": [
+                    [
+                        2005
+                    ]
+                ]
+            },
+            "page": "499-508",
+            "publisher": "Elsevier",
+            "title": "Cadherins and catenins in breast cancer",
+            "type": "article-journal",
+            "volume": "17"
+        },
+        {
+            "author": [
+                {
+                    "family": "Sharma",
+                    "given": "Ganesh N"
+                },
+                {
+                    "family": "Dave",
+                    "given": "Rahul"
+                },
+                {
+                    "family": "Sanadya",
+                    "given": "Jyotsana"
+                },
+                {
+                    "family": "Sharma",
+                    "given": "Piush"
+                },
+                {
+                    "family": "Sharma",
+                    "given": "KK3255438"
+                },
+                {
+                    "literal": "others"
+                }
+            ],
+            "container-title": "Journal of advanced pharmaceutical technology & research",
+            "id": "sharma2010various",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2010
+                    ]
+                ]
+            },
+            "page": "109",
+            "publisher": "Medknow Publications",
+            "title": "Various types and management of breast cancer: An overview",
+            "title-short": "Various types and management of breast cancer",
+            "type": "article-journal",
+            "volume": "1"
+        },
+        {
+            "author": [
+                {
+                    "family": "Perkins-Kirkpatrick",
+                    "given": "SE"
+                },
+                {
+                    "family": "Lewis",
+                    "given": "SC"
+                }
+            ],
+            "container-title": "Nature communications",
+            "id": "perkins2020increasing",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "page": "3357",
+            "publisher": "Nature Publishing Group UK London",
+            "title": "Increasing trends in regional heatwaves",
+            "type": "article-journal",
+            "volume": "11"
+        },
+        {
+            "DOI": "10.1002/ijc.32968",
+            "URL": "https://onlinelibrary.wiley.com/doi/abs/10.1002/ijc.32968",
+            "author": [
+                {
+                    "family": "Armaroli",
+                    "given": "Paola"
+                },
+                {
+                    "family": "Riggi",
+                    "given": "Emilia"
+                },
+                {
+                    "family": "Basu",
+                    "given": "Partha"
+                },
+                {
+                    "family": "Anttila",
+                    "given": "Ahti"
+                },
+                {
+                    "family": "Ponti",
+                    "given": "Antonio"
+                },
+                {
+                    "family": "Carvalho",
+                    "given": "Andre L."
+                },
+                {
+                    "family": "Dillner",
+                    "given": "Joakim"
+                },
+                {
+                    "family": "Elfström",
+                    "given": "Miriam K."
+                },
+                {
+                    "family": "Giordano",
+                    "given": "Livia"
+                },
+                {
+                    "family": "Lönnberg",
+                    "given": "Stefan"
+                },
+                {
+                    "family": "Ronco",
+                    "given": "Gugliemo"
+                },
+                {
+                    "family": "Senore",
+                    "given": "Carlo"
+                },
+                {
+                    "family": "Soerjomataram",
+                    "given": "Isabelle"
+                },
+                {
+                    "family": "Tomatis",
+                    "given": "Mariano"
+                },
+                {
+                    "family": "Vale",
+                    "given": "Diama B."
+                },
+                {
+                    "family": "Jarm",
+                    "given": "Katja"
+                },
+                {
+                    "family": "Sankaranarayanan",
+                    "given": "Rengaswamy"
+                },
+                {
+                    "family": "Segnan",
+                    "given": "Nereo"
+                }
+            ],
+            "container-title": "International Journal of Cancer",
+            "id": "armaroli2020",
+            "issue": "7",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020,
+                        10
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "1855-1863",
+            "title": "Performance indicators in breast cancer screening in the European Union: A comparison across countries of screen positivity and detection rates",
+            "title-short": "Performance indicators in breast cancer screening in the European Union",
+            "type": "article-journal",
+            "volume": "147"
+        },
+        {
+            "DOI": "10.7326/M18-0850",
+            "URL": "http://annals.org/article.aspx?doi=10.7326/M18-0850",
+            "author": [
+                {
+                    "family": "Tricco",
+                    "given": "Andrea C."
+                },
+                {
+                    "family": "Lillie",
+                    "given": "Erin"
+                },
+                {
+                    "family": "Zarin",
+                    "given": "Wasifa"
+                },
+                {
+                    "family": "O’Brien",
+                    "given": "Kelly K."
+                },
+                {
+                    "family": "Colquhoun",
+                    "given": "Heather"
+                },
+                {
+                    "family": "Levac",
+                    "given": "Danielle"
+                },
+                {
+                    "family": "Moher",
+                    "given": "David"
+                },
+                {
+                    "family": "Peters",
+                    "given": "Micah D. J."
+                },
+                {
+                    "family": "Horsley",
+                    "given": "Tanya"
+                },
+                {
+                    "family": "Weeks",
+                    "given": "Laura"
+                },
+                {
+                    "family": "Hempel",
+                    "given": "Susanne"
+                },
+                {
+                    "family": "Akl",
+                    "given": "Elie A."
+                },
+                {
+                    "family": "Chang",
+                    "given": "Christine"
+                },
+                {
+                    "family": "McGowan",
+                    "given": "Jessie"
+                },
+                {
+                    "family": "Stewart",
+                    "given": "Lesley"
+                },
+                {
+                    "family": "Hartling",
+                    "given": "Lisa"
+                },
+                {
+                    "family": "Aldcroft",
+                    "given": "Adrian"
+                },
+                {
+                    "family": "Wilson",
+                    "given": "Michael G."
+                },
+                {
+                    "family": "Garritty",
+                    "given": "Chantelle"
+                },
+                {
+                    "family": "Lewin",
+                    "given": "Simon"
+                },
+                {
+                    "family": "Godfrey",
+                    "given": "Christina M."
+                },
+                {
+                    "family": "Macdonald",
+                    "given": "Marilyn T."
+                },
+                {
+                    "family": "Langlois",
+                    "given": "Etienne V."
+                },
+                {
+                    "family": "Soares-Weiser",
+                    "given": "Karla"
+                },
+                {
+                    "family": "Moriarty",
+                    "given": "Jo"
+                },
+                {
+                    "family": "Clifford",
+                    "given": "Tammy"
+                },
+                {
+                    "family": "Tunçalp",
+                    "given": "Özge"
+                },
+                {
+                    "family": "Straus",
+                    "given": "Sharon E."
+                }
+            ],
+            "container-title": "Annals of Internal Medicine",
+            "id": "tricco2018",
+            "issue": "7",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018,
+                        10,
+                        2
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "467",
+            "title": "PRISMA Extension for Scoping Reviews (PRISMA-ScR): Checklist and Explanation",
+            "title-short": "PRISMA Extension for Scoping Reviews (PRISMA-ScR)",
+            "type": "article-journal",
+            "volume": "169"
+        }
+    ],
+    "project_biblios": []
+}
