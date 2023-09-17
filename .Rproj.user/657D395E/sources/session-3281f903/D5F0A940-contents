@@ -85,7 +85,7 @@ valueBox(x1,
 
 ```{r}
 x2 <- hipoxia_clean %>%
-  filter(age>=60) %>%
+  filter(age>=61) %>%
   summarise(total = n())
 
 valueBox(x2, 
